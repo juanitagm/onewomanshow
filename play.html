@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>One Woman Show · The Run</title>
+    <link rel="preload" href="/onewomanshow/assets/fonts/PressStart2P-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/onewomanshow/assets/fonts/Poppins-Medium.ttf" as="font" type="font/ttf" crossorigin />
+    <script type="module" crossorigin src="/onewomanshow/assets/play-aVelSg5W.js"></script>
+    <link rel="modulepreload" crossorigin href="/onewomanshow/assets/colleagues-BchjOv-p.js">
+    <link rel="stylesheet" crossorigin href="/onewomanshow/assets/play-CG8eqjXu.css">
+  </head>
+  <body>
+    <!-- G4b: GAME PROTOTYPE (about 90 seconds, event cards). Spec: briefs/05_game-design.md (APPROVED 2 Nov). -->
+    <main class="game" id="shell" aria-label="One Woman Show: The Run (game)">
+      <canvas id="world" aria-hidden="true"></canvas>
+
+      <!-- Event card: the game pauses at every event; tap / space to go on -->
+      <section class="card" id="card" hidden aria-live="polite">
+        <div class="card-panel" id="cardPanel">
+          <p class="pixel card-kicker" id="cardKicker"></p>
+          <p class="pixel card-title" id="cardTitle"></p>
+          <div class="card-body" id="cardBody"></div>
+          <div class="card-listen" id="cardListen" hidden><span id="cardListenBar"></span></div>
+          <p class="pixel card-cta" id="cardCta"></p>
+        </div>
+      </section>
+      <p class="toast" id="toast" role="status" aria-live="polite"></p>
+
+      <div class="hud-buttons">
+        <button class="pixel hud-btn" id="muteBtn" type="button" aria-pressed="false">Sound on</button>
+        <button class="pixel hud-btn" id="pauseBtn" type="button" aria-pressed="false">Pause</button>
+      </div>
+
+      <section class="overlay" id="startOverlay">
+        <div class="panel">
+          <p class="pixel panel-kicker" id="startNote"></p>
+          <h1 class="pixel panel-title"><span id="startTitle"></span><br /><span class="accent" id="startSub"></span></h1>
+          <ul class="controls" id="controls"></ul>
+          <button class="pixel btn" id="playBtn" type="button">Press start</button>
+        </div>
+      </section>
+
+      <section class="overlay" id="endOverlay" hidden>
+        <div class="panel">
+          <h2 class="pixel panel-title" id="endTitle"></h2>
+          <ul class="end-lines" id="endLines"></ul>
+          <dl class="breakdown" id="breakdown"></dl>
+          <button class="pixel btn" id="againBtn" type="button">Play again</button>
+        </div>
+      </section>
+
+      <section class="overlay" id="pauseOverlay" hidden>
+        <div class="panel"><p class="pixel panel-title">Paused</p><p class="end-line">Tap or press P to go on.</p></div>
+      </section>
+    </main>
+  </body>
+</html>
